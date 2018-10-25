@@ -5,7 +5,7 @@ Machine problem exercise for my job application on [HomeCredit PH](https://www.h
 Here are the two features I gathered from the documentation
 
 #### API-1: Display Weather Information
-- [ ] API-2: list of weather from London, Prague, and San Francisco
+- [ ] API-1: list of weather from London, Prague, and San Francisco
 - [ ] include location, actual weather, temperature
 - [ ] JSON format
 
