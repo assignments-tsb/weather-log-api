@@ -5,9 +5,9 @@ Machine problem exercise for my job application on [HomeCredit PH](https://www.h
 Here are the two features I gathered from the documentation
 
 #### API-1: Display Weather Information
-- [ ] API-1: list of weather from London, Prague, and San Francisco
-- [ ] include location, actual weather, temperature
-- [ ] JSON format
+- [x] API-1: list of weather from London, Prague, and San Francisco
+- [x] include location, actual weather, temperature
+- [x] JSON format
 
 #### API-2: Store Responses
 - [ ] store last 5 unique responses from API-1 in a buffer

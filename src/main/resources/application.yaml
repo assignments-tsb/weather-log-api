@@ -1,3 +1,7 @@
+ph.homecredit.weatherlog.api:
+  weatherMapAPIURI: https://api.openweathermap.org/data/2.5
+  weatherMapAPIKey: xxx-insert-api-key-here-xxx
+
 server:
   port: 8081
 
