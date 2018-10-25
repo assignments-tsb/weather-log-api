@@ -32,3 +32,7 @@ cd weather-info-api
 ```
 ./gradlew test
 ```
+
+#### For IntelliJ Users
+- you need to manually enable the annotation processors
+![IntelliJ and Lombok](/docs/img/idea-lombok.png)
