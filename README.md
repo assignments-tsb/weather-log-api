@@ -10,9 +10,9 @@ Here are the two features I gathered from the documentation
 - [x] JSON format
 
 #### API-2: Store Responses
-- [ ] store last 5 unique responses from API-1 in a buffer
+- [x] store last 5 unique responses from API-1 in a buffer
 - [ ] save in a DB table "WeatherLog" when API-2 is triggered
-- [ ] generate "responseId" after creating the response
+- [x] generate "responseId" after creating the response
 - [ ] generate "dTimeInserted" after saving the data
 - [ ] generate "id" after saving the data
 

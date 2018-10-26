@@ -20,12 +20,14 @@ public class WeatherLogServiceAspect {
 
     /**
      * we listen to returned weather logs without messing around the previous code
-     * @param weatherLogs
+     * @param weatherLogs the weather logs returned from an invocation of WeatherLogService.findByLocations
      */
     @AfterReturning(pointcut = "execution(* ph.homecredit.weatherlog.api.service.WeatherLogService.findByLocations(..))", returning = "weatherLogs")
     public void afterReturningWeatherLogs(List<WeatherLog> weatherLogs) {
         log.info("Returned: {}", weatherLogs);
 
         weatherLogs.forEach(memstore::enqueue);
+
+        log.debug("Current List: {}", memstore.findMostRecent());
     }
 }
