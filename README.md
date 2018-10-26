@@ -21,6 +21,7 @@ The project template was generated from the [Spring Initializer](https://start.s
 
 #### Requirements
 - Java
+- Setup the environment variables refer to the [application.yaml](src/main/resources/application.yaml) for config details
 
 #### Running the App
 - use the gradle wrapper
@@ -31,6 +32,17 @@ cd weather-info-api
 - test
 ```
 ./gradlew test
+```
+
+#### Building the App
+```
+./gradlew build -x test
+
+java -jar build/libs/weather-log-api-0.0.1-SNAPSHOT.jar \
+--ph.homecredit.weatherlog.api.weatherMapAPIKey=xxx-insert-api-key-here-xxx \
+--spring.datasource.url=jdbc:postgresql://xxx-insert-db-endpoint-here-xxx.us-west-2.rds.amazonaws.com:5432/homecredit \
+--spring.datasource.username=xxx-insert-username-here-xxx \
+--spring.datasource.password=xxx-insert-password-here-xxx
 ```
 
 #### For IntelliJ Users
