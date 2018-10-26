@@ -2,6 +2,23 @@ ph.homecredit.weatherlog.api:
   weatherMapAPIURI: https://api.openweathermap.org/data/2.5
   weatherMapAPIKey: xxx-insert-api-key-here-xxx
 
+# Postgres Datasource
+spring.datasource:
+  url: jdbc:postgresql://xxx-insert-db-endpoint-here-xxx.us-west-2.rds.amazonaws.com:5432/homecredit
+  username: xxx-insert-username-here-xxx
+  password: xxx-insert-password-here-xxx
+
+spring.jpa:
+  generate-ddl: true
+  showSql: true
+  properties:
+    hibernate:
+      implicit_naming_strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyHbmImpl
+      physical_naming_strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      temp.use_jdbc_metadata_defaults: false
+      jdbc.lob.non_contextual_creation: true
+
 server:
   port: 8081
 
