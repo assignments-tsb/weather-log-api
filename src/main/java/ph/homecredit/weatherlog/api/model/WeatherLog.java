@@ -14,6 +14,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor @AllArgsConstructor
 public class WeatherLog {
 
+    //a globally unique id, generated when the response is created
+    String responseId;
+
     String location;
     String actualWeather;
     String temperature;

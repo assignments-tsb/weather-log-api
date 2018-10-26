@@ -12,6 +12,7 @@ import ph.homecredit.weatherlog.api.client.openweathermap.OpenWeatherMapClient;
 import ph.homecredit.weatherlog.api.model.WeatherLog;
 
 import java.util.List;
+import java.util.UUID;
 
 @Slf4j
 @Component
@@ -25,12 +26,13 @@ public class OpenWeatherMapClientImpl implements OpenWeatherMapClient {
     public WeatherLog findByLocation(String location) {
         log.debug("Searching for weather: {}", location);
 
+        //TODO: error handler for when things go wrong
         return rest.getForEntity(UriComponentsBuilder
                 .fromHttpUrl(config.getWeatherMapAPIURI())
                 .path("/weather")
                 .queryParam("appid", config.getWeatherMapAPIKey())
                 .queryParam("q", location).build().toUriString(), WeatherInternal.class)
-                .getBody()
+                .getBody() //this can be null when something goes wrong with the get request
                 .toWeatherLog();
     }
 
@@ -54,6 +56,7 @@ public class OpenWeatherMapClientImpl implements OpenWeatherMapClient {
 
         WeatherLog toWeatherLog() {
             return WeatherLog.builder()
+                    .responseId(UUID.randomUUID().toString())
                     .actualWeather(weather.get(0).description)
                     .location(name)
                     .temperature(main.temp)
